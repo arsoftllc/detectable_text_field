@@ -45,6 +45,7 @@ class DetectableText extends StatefulWidget {
     this.trimMode = TrimMode.Length,
     this.delimiter = _kEllipsis + ' ',
     this.callback,
+    this.readMore = true
   });
 
   final String text;
@@ -87,6 +88,7 @@ class DetectableText extends StatefulWidget {
   final String trimExpandedText;
   final String trimCollapsedText;
   final Color? colorClickableText;
+  final bool readMore;
 
   @override
   _DetectableTextState createState() => _DetectableTextState();
@@ -95,6 +97,11 @@ class DetectableText extends StatefulWidget {
 class _DetectableTextState extends State<DetectableText> {
   bool _readMore = true;
 
+  @override
+  void initState() {
+    super.initState();
+    _readMore = widget.readMore;
+  }
   void _onTapLink() {
     setState(() {
       _readMore = !_readMore;

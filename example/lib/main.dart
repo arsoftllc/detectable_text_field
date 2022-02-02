@@ -41,10 +41,11 @@ class MyHomePage extends StatelessWidget {
             children: <Widget>[
               DetectableText(
                 trimLines: 1,
+                readMore: false,
                 colorClickableText: Colors.pink,
                 trimMode: TrimMode.Line,
-                trimCollapsedText: 'more',
-                trimExpandedText: '...less',
+                trimCollapsedText: '',
+                trimExpandedText: '',
                 text:
                     "Welcome to #Detectable @TextField http://www.google.com this is sample text we are texting the feed text here. Welcome to #Detectable @TextField this is sample text we are texting the feed text here",
                 detectionRegExp: RegExp(
